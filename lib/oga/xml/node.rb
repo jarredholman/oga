@@ -177,8 +177,19 @@ module Oga
       end
 
       # @return [TrueClass|FalseClass]
+      def xhtml?
+        if @xhtml_p.nil?
+          root = root_node
+
+          @xhtml_p = root.is_a?(Document) && root.xhtml?
+        end
+
+        @xhtml_p
+      end
+	  
+      # @return [TrueClass|FalseClass]
       def xml?
-        !html?
+        !html? && !xhtml?
       end
 
       # Yields all ancestor elements of the current node.

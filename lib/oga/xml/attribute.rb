@@ -67,7 +67,7 @@ module Oga
       # @return [String|NilClass]
       def value
         if !@decoded and @value
-          @value   = EntityDecoder.try_decode(@value, html?)
+          @value   = EntityDecoder.try_decode(@value, html? || xhtml?)
           @decoded = true
         end
 
@@ -123,6 +123,11 @@ module Oga
       # @return [TrueClass|FalseClass]
       def html?
         !!@element && @element.html?
+      end
+
+      # @return [TrueClass|FalseClass]
+      def xhtml?
+        !!@element && @element.xhtml?
       end
     end # Attribute
   end # XML

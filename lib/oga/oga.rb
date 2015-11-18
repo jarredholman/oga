@@ -23,6 +23,19 @@ module Oga
     HTML::Parser.new(html, options).parse
   end
 
+  # Parses the given XHTML document.
+  # This parses in XML mode but allows HTML entities
+  #
+  # @example
+  #  document = Oga.parse_xhtml('<html>...</html>')
+  #
+  # @see [Oga::XML::Lexer#initialize]
+  #
+  # @return [Oga::XML::Document]
+  def self.parse_xhtml(html, options = {})
+    XHTML::Parser.new(html, options).parse
+  end
+  
   # Parses the given XML document using the SAX parser.
   #
   # @example

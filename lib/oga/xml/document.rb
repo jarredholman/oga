@@ -78,6 +78,11 @@ module Oga
         type.equal?(:html)
       end
 
+      # @return [TrueClass|FalseClass]
+      def xhtml?
+        type.equal?(:xhtml)
+      end
+
       # Inspects the document and its child nodes. Child nodes are indented for
       # each nesting level.
       #

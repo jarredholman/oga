@@ -21,7 +21,7 @@ module Oga
       # @return [String]
       def text
         if decode_entities?
-          @text    = EntityDecoder.try_decode(@text, html?)
+          @text    = EntityDecoder.try_decode(@text, html? || xhtml?)
           @decoded = true
         end
 

@@ -50,6 +50,8 @@ require 'oga/html/parser'
 require 'oga/html/sax_parser'
 require 'oga/html/entities'
 
+require 'oga/xhtml/parser'
+
 require 'oga/ruby/node'
 require 'oga/ruby/generator'
 
